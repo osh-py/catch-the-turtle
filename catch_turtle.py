@@ -4,10 +4,15 @@ import time
 screen = turtle.Screen()
 screen.bgcolor("light blue")
 screen.title("Catch Turtle")
+screen.tracer(0)
 score = turtle.Turtle()
 score.color("Blue")
 score.teleport(0.00,360)
 score.hideturtle()
+puan = turtle.Turtle()
+puan.hideturtle()
+puan.color("Red")
+puan.teleport(0.00, -300)
 timer = turtle.Turtle()
 timer.hideturtle()
 timer.teleport(0.00,330)
@@ -18,6 +23,7 @@ kaplumbaga.color("Green")
 kaplumbaga.up()
 count = 0 
 zaman = 10
+screen.tracer(1)
 
 score.write(f"Score : {count}", align="Center", font=("Arial", 20, "bold"))
 timer.write(f"Timer : {zaman}", align="Center", font=("Arial", 20, "bold"))
@@ -45,13 +51,12 @@ while 0<zaman:
     kaplumbaga.showturtle()
     kaplumbaga.onclick(click, 1)
 print("\nOyun bitti")
-
+score.clear()
+score.write(f"Score : {0}", align="Center", font=("Arial", 20, "bold"))
+puan.write(f"Sonuc : {count}", align="Center", font=("Arial", 20, "bold"))
 kaplumbaga.onclick(lambda x,y: score.clear(),1)
-kaplumbaga.onclick(lambda x,y: score.write(f"Score : {count}", align="Center", font=("Arial", 20, "bold")),1)
+kaplumbaga.onclick(lambda x,y: score.write(f"Score : {0}", align="Center", font=("Arial", 20, "bold")),1)
 kaplumbaga.teleport(0.00,0.00)
-
-
-
 
 
 turtle.done()
